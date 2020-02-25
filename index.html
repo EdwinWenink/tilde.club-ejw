@@ -89,6 +89,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li><a href="#hi"><span class="toc-section-number">1</span> Hi</a></li>
 <li><a href="#generate-this-site-with-pandoc"><span class="toc-section-number">2</span> Generate this site with pandoc</a></li>
+<li><a href="#github-repo"><span class="toc-section-number">3</span> Github repo</a></li>
 </ul>
 </nav>
 <section id="hi" class="level1">
@@ -109,12 +110,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb1-7" title="7"><span class="ex">--css</span> https://www.edwinwenink.xyz/css/twocolumn.css </a>
 <a class="sourceLine" id="cb1-8" title="8"><span class="ex">~/public_html/**/*.md</span> ~/public_html/webring.md </a>
 <a class="sourceLine" id="cb1-9" title="9"><span class="ex">-o</span> ~/public_html/index.html</a></code></pre></div>
-<p>Quickly create a new post</p>
+<p>Quickly create a new post:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" title="1"><span class="va">TIMESTAMP=$(</span><span class="fu">date</span> +%s<span class="va">)</span></a>
 <a class="sourceLine" id="cb2-2" title="2"><span class="va">DATE=$(</span><span class="fu">date</span> +%Y-%m-%d<span class="va">)</span></a>
 <a class="sourceLine" id="cb2-3" title="3"><span class="va">FILE=</span>~/public_html/content/<span class="va">$DATE</span>-<span class="va">$TIMESTAMP</span>.md</a>
 <a class="sourceLine" id="cb2-4" title="4"><span class="fu">touch</span> <span class="va">$FILE</span></a>
 <a class="sourceLine" id="cb2-5" title="5"><span class="bu">echo</span> <span class="st">&quot;@</span><span class="va">$TIMESTAMP</span><span class="st">&quot;</span> <span class="op">&gt;&gt;</span> <span class="va">$FILE</span></a></code></pre></div>
+<p>Naming convention: <code>2020-02-25-1582666139.md</code></p>
+<p>Create aliases in <code>.bashrc</code> to quickly call these scripts:</p>
+<p><code>alias build=&quot;/bin/bash ~/public_html/scripts/build.sh&quot; alias new=&quot;/bin/bash ~/public_html/scripts/new.sh&quot;</code></p>
+</section>
+<section id="github-repo" class="level1">
+<h1><span class="header-section-number">3</span> Github repo</h1>
+<p><span class="citation" data-cites="1582668320">@1582668320</span></p>
+<p>I will back up this tilde <a href="https://github.com/EdwinWenink/tilde.club-ejw">here</a>.</p>
 <!-- Begin Tilde.Club Ring Fragment-->
 <center>
 <font size="2"> </font>
