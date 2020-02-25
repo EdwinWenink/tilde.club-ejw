@@ -1,0 +1,1 @@
+pandoc -s --toc --metadata title="~ejw" --metadata author="Edwin Wenink" --number-sections --section-divs --css https://www.edwinwenink.xyz/css/twocolumn.css ~/public_html/**/*.md ~/public_html/webring.md -o ~/public_html/index.html
