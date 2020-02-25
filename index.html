@@ -90,9 +90,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="#hi"><span class="toc-section-number">1</span> Hi</a></li>
 <li><a href="#generate-this-site-with-pandoc"><span class="toc-section-number">2</span> Generate this site with pandoc</a></li>
 <li><a href="#github-repo"><span class="toc-section-number">3</span> Github repo</a></li>
-<li><a href="#finding-old-posts"><span class="toc-section-number">4</span> Finding old posts</a></li>
-<li><a href="#fortune-cookie"><span class="toc-section-number">5</span> Fortune cookie</a></li>
-<li><a href="#links"><span class="toc-section-number">6</span> Links</a></li>
+<li><a href="#opening-posts-in-vim"><span class="toc-section-number">4</span> Opening posts in Vim</a><ul>
+<li><a href="#based-on-filename"><span class="toc-section-number">4.1</span> Based on filename</a></li>
+<li><a href="#based-on-content"><span class="toc-section-number">4.2</span> Based on content</a></li>
+<li><a href="#open-most-recently-edited-file"><span class="toc-section-number">4.3</span> Open most recently edited file</a></li>
+<li><a href="#open-most-recent-post"><span class="toc-section-number">4.4</span> Open most recent post</a></li>
+</ul></li>
+<li><a href="#who-is-logged-in"><span class="toc-section-number">5</span> Who is logged in?</a></li>
+<li><a href="#fortune-cookie"><span class="toc-section-number">6</span> Fortune cookie</a></li>
+<li><a href="#links"><span class="toc-section-number">7</span> Links</a></li>
 </ul>
 </nav>
 <section id="hi" class="level1">
@@ -130,12 +136,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><span class="citation" data-cites="1582668320">@1582668320</span></p>
 <p>I will back up this tilde <a href="https://github.com/EdwinWenink/tilde.club-ejw">here</a>.</p>
 </section>
-<section id="finding-old-posts" class="level1">
-<h1><span class="header-section-number">4</span> Finding old posts</h1>
+<section id="opening-posts-in-vim" class="level1">
+<h1><span class="header-section-number">4</span> Opening posts in Vim</h1>
 <p><span class="citation" data-cites="1582669093">@1582669093</span></p>
-<ol type="1">
-<li>Use the naming convention of 2020-02-25-1582669093 (date-timestamp)</li>
-</ol>
+<section id="based-on-filename" class="level2">
+<h2><span class="header-section-number">4.1</span> Based on filename</h2>
+<p>Use the naming convention of 2020-02-25-1582669093 (date-timestamp)</p>
 <ul>
 <li>Seach on date:
 <ul>
@@ -147,39 +153,73 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><code>vim *909*</code></li>
 </ul></li>
 </ul>
-<ol start="2" type="1">
-<li>grep grep grep</li>
-</ol>
+</section>
+<section id="based-on-content" class="level2">
+<h2><span class="header-section-number">4.2</span> Based on content</h2>
+<p>grep grep grep</p>
 <ul>
 <li>e.g. <code>grep TIMESTAMP content/*</code></li>
 </ul>
 </section>
+<section id="open-most-recently-edited-file" class="level2">
+<h2><span class="header-section-number">4.3</span> Open most recently edited file</h2>
+<p>This assumes you are in the content directory (i.e. the same directory as the most recently edited file):</p>
+<p><code>!v</code></p>
+</section>
+<section id="open-most-recent-post" class="level2">
+<h2><span class="header-section-number">4.4</span> Open most recent post</h2>
+<p>Be aware of the backticks!</p>
+<p>vim `ls -t | head -1`</p>
+</section>
+</section>
+<section id="who-is-logged-in" class="level1">
+<h1><span class="header-section-number">5</span> Who is logged in?</h1>
+<p><span class="citation" data-cites="1582673654">@1582673654</span></p>
+<ol type="1">
+<li><code>w</code> command</li>
+</ol>
+<p>Run <code>w</code> to see all logged in users, as well as their current process. To see info of a specific user, type <code>w ejw</code>:</p>
+<pre><code> 16:35:48 up 71 days, 19:54, 24 users,  load average: 2.36, 1.81, 1.83
+USER     TTY        LOGIN@   IDLE   JCPU   PCPU WHAT
+ejw      pts/94    13:26    4.00s  0.46s  0.00s tmux</code></pre>
+<ol start="2" type="1">
+<li><code>who</code> command</li>
+<li><code>users</code></li>
+</ol>
+<p>Returns a space separated list. This is all on one line, so grep is useless here.</p>
+</section>
 <section id="fortune-cookie" class="level1">
-<h1><span class="header-section-number">5</span> Fortune cookie</h1>
-<span class="citation" data-cites="1582673422">@1582673422</span>
+<h1><span class="header-section-number">6</span> Fortune cookie</h1>
+<span class="citation" data-cites="1582674457">@1582674457</span>
 <pre>
- _________________________________________
-/ The problems of business administration \
-| in general, and database management in  |
-| particular are much to difficult for    |
-| people that think in IBMese, compounded |
-| with sloppy english. -- Edsger          |
-\ Dijkstra!                               /
- -----------------------------------------
- \     /\  ___  /\
-  \   // \/   \/ \\
-     ((    O O    ))
-      \\ /     \ //
-       \/  | |  \/ 
-        |  | |  |  
-        |  | |  |  
-        |   o   |  
-        | |   | |  
-        |m|   |m|  
+ ______________________________________
+/ To the systems programmer, users and \
+| applications serve only to provide a |
+\ test load.!                          /
+ --------------------------------------
+          \           \  / 
+           \           \/  
+               (__)    /\         
+               (oo)   O  O        
+               _\/_   //         
+         *    (    ) //       
+          \  (\\    //       
+           \(  \\    )                              
+            (   \\   )   /\                          
+  ___[\______/^^^^^^^\__/) o-)__                     
+ |\__[=======______//________)__\                    
+ \|_______________//____________|                    
+     |||      || //||     |||
+     |||      || @.||     |||                        
+      ||      \/  .\/      ||                        
+                 . .                                 
+                '.'.`                                
+
+            COW-OPERATION                           
 </pre>
 </section>
 <section id="links" class="level1">
-<h1><span class="header-section-number">6</span> Links</h1>
+<h1><span class="header-section-number">7</span> Links</h1>
 <ul>
 <li><a href="https://www.tilde.club/~brennen/tilde.club.listusers.html">list users</a></li>
 <li><a href="https://tilde.club/~pfhawkins/othertildes.html">other tildes</a></li>
@@ -207,7 +247,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </map>
 </center>
 <!-- End Webring Fragment-->
-<p>Latest build <span class="citation" data-cites="1582673422">@1582673422</span></p>
+<p>Latest build <span class="citation" data-cites="1582674457">@1582674457</span></p>
 </section>
 </body>
 </html>
