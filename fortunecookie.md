@@ -1,11 +1,10 @@
 # Fortune cookie\n
-@1582674457\n
+@1582734492\n
 <pre>
- ______________________________________
-/ To the systems programmer, users and \
-| applications serve only to provide a |
-\ test load.!                          /
- --------------------------------------
+ ________________________________________
+/ You possess a mind not merely twisted, \
+\ but actually sprained.!                /
+ ----------------------------------------
           \           \  / 
            \           \/  
                (__)    /\         
@@ -26,3 +25,4 @@
 
             COW-OPERATION                           
 </pre>
+Generated with <a href='https://tilde.club/~ejw/scripts/randomcowsay.sh'>randomcowsay.sh</a>.

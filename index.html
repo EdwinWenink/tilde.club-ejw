@@ -93,18 +93,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="#opening-posts-in-vim"><span class="toc-section-number">4</span> Opening posts in Vim</a><ul>
 <li><a href="#based-on-filename"><span class="toc-section-number">4.1</span> Based on filename</a></li>
 <li><a href="#based-on-content"><span class="toc-section-number">4.2</span> Based on content</a></li>
-<li><a href="#open-most-recently-edited-file"><span class="toc-section-number">4.3</span> Open most recently edited file</a></li>
-<li><a href="#open-most-recent-post"><span class="toc-section-number">4.4</span> Open most recent post</a></li>
+<li><a href="#searching-title-with-grep"><span class="toc-section-number">4.3</span> Searching title with grep</a></li>
+<li><a href="#open-most-recently-edited-file"><span class="toc-section-number">4.4</span> Open most recently edited file</a></li>
+<li><a href="#open-latest-post"><span class="toc-section-number">4.5</span> Open latest post</a></li>
 </ul></li>
 <li><a href="#who-is-logged-in"><span class="toc-section-number">5</span> Who is logged in?</a></li>
-<li><a href="#fortune-cookie"><span class="toc-section-number">6</span> Fortune cookie</a></li>
-<li><a href="#links"><span class="toc-section-number">7</span> Links</a></li>
+<li><a href="#user-information-with-finger"><span class="toc-section-number">6</span> User information with finger</a><ul>
+<li><a href="#finding-information-on-others"><span class="toc-section-number">6.1</span> Finding information on others</a></li>
+<li><a href="#setting-your-own-information-plan-and-project"><span class="toc-section-number">6.2</span> Setting your own information, plan and project</a></li>
+</ul></li>
+<li><a href="#fortune-cookie"><span class="toc-section-number">7</span> Fortune cookie</a></li>
+<li><a href="#links"><span class="toc-section-number">8</span> Links</a></li>
 </ul>
 </nav>
 <section id="hi" class="level1">
 <h1><span class="header-section-number">1</span> Hi</h1>
 <p><span class="citation" data-cites="1582666139">@1582666139</span></p>
-<p>I’m also online <a href="https://www.edwinwenink.xyz">here</a>. Hit me up if you would like to collaborate on something.</p>
+<ul>
+<li>Student of philosophy and artificial intelligence.</li>
+<li>I write things <a href="https://www.edwinwenink.xyz">here</a>. Hit me up if you would like to collaborate on something.</li>
+<li>I’ll probably use this page to experiment with making websites and content with only basic Unix and command-line tools.</li>
+</ul>
 </section>
 <section id="generate-this-site-with-pandoc" class="level1">
 <h1><span class="header-section-number">2</span> Generate this site with pandoc</h1>
@@ -161,15 +170,26 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>e.g. <code>grep TIMESTAMP content/*</code></li>
 </ul>
 </section>
+<section id="searching-title-with-grep" class="level2">
+<h2><span class="header-section-number">4.3</span> Searching title with grep</h2>
+<ul>
+<li><code>grep -il &quot;Opening posts in Vim&quot; | xargs vim</code></li>
+</ul>
+<p>-i flag makes the search case insensitive (optional)</p>
+<p>-l is important because it only returns the filename of the match, so you can pass it as an argument to the <code>vim</code> command with <code>xargs</code>.</p>
+</section>
 <section id="open-most-recently-edited-file" class="level2">
-<h2><span class="header-section-number">4.3</span> Open most recently edited file</h2>
+<h2><span class="header-section-number">4.4</span> Open most recently edited file</h2>
 <p>This assumes you are in the content directory (i.e. the same directory as the most recently edited file):</p>
 <p><code>!v</code></p>
+<p>Alternatively, you can find the most recently edited file with:</p>
+<pre><code>vim `ls -t | head -1`</code></pre>
+<p>Be aware of the backticks! <code>ls -t</code> sorts on edit time, with the most recently edited file on top.</p>
 </section>
-<section id="open-most-recent-post" class="level2">
-<h2><span class="header-section-number">4.4</span> Open most recent post</h2>
-<p>Be aware of the backticks!</p>
-<p>vim `ls -t | head -1`</p>
+<section id="open-latest-post" class="level2">
+<h2><span class="header-section-number">4.5</span> Open latest post</h2>
+<p>Because all posts are chronologically ordered due to the used naming convention, we can also list all content files and open only the last one:</p>
+<pre><code>vim `ls | tail -1`</code></pre>
 </section>
 </section>
 <section id="who-is-logged-in" class="level1">
@@ -187,16 +207,51 @@ ejw      pts/94    13:26    4.00s  0.46s  0.00s tmux</code></pre>
 <li><code>users</code></li>
 </ol>
 <p>Returns a space separated list. This is all on one line, so grep is useless here.</p>
+<ol start="4" type="1">
+<li><code>finger</code></li>
+</ol>
+<p>This command is actually for finding out user information and contact details, but also kind of works for this purpose. It looks like it does not matter that some people may not have changed their user information.</p>
+</section>
+<section id="user-information-with-finger" class="level1">
+<h1><span class="header-section-number">6</span> User information with finger</h1>
+<p><span class="citation" data-cites="1582731836">@1582731836</span></p>
+<p>The phrasing of this command lends itself quite well for stupid jokes.</p>
+<section id="finding-information-on-others" class="level2">
+<h2><span class="header-section-number">6.1</span> Finding information on others</h2>
+<p>For an overview of all online users: <code>finger</code></p>
+<p>For a specific user: <code>finger [username]</code></p>
+</section>
+<section id="setting-your-own-information-plan-and-project" class="level2">
+<h2><span class="header-section-number">6.2</span> Setting your own information, plan and project</h2>
+<p>Use the <code>chfn</code> (change finger) command for this.</p>
+<p>The -o and -p flags are used for your office and office phone, but according to ~pfhawkins we use the following convention on this tilde:</p>
+<pre><code>chfn -f &quot;Full name&quot; username
+chfn -o &quot;Your city here&quot; username
+chfn -p &quot;Your country or state here&quot; username</code></pre>
+<p>Additionally, you can notify others what you are up to by making a plan at <code>~/.plan</code>.</p>
+<p>You can also indicate others of a project you are working on by making <code>~/.project</code>.</p>
+<p>All this information will be included when people “finger” you.</p>
+<p>Output of <code>finger ejw</code>:</p>
+<pre><code>Login: ejw                      Name: Edwin Wenink
+Directory: /home/ejw                    Shell: /bin/bash
+Office: Netherlands
+On since Wed Feb 26 08:40 (MST) on pts/18 from 145.116.163.127
+   3 seconds idle
+No mail.
+Project:
+Experimenting with old school Unix stuff
+Plan:
+Think about fun projects to add to my page</code></pre>
+</section>
 </section>
 <section id="fortune-cookie" class="level1">
-<h1><span class="header-section-number">6</span> Fortune cookie</h1>
-<span class="citation" data-cites="1582674457">@1582674457</span>
+<h1><span class="header-section-number">7</span> Fortune cookie</h1>
+<span class="citation" data-cites="1582734492">@1582734492</span>
 <pre>
- ______________________________________
-/ To the systems programmer, users and \
-| applications serve only to provide a |
-\ test load.!                          /
- --------------------------------------
+ ________________________________________
+/ You possess a mind not merely twisted, \
+\ but actually sprained.!                /
+ ----------------------------------------
           \           \  / 
            \           \/  
                (__)    /\         
@@ -217,13 +272,18 @@ ejw      pts/94    13:26    4.00s  0.46s  0.00s tmux</code></pre>
 
             COW-OPERATION                           
 </pre>
+<p>Generated with <a href='https://tilde.club/~ejw/scripts/randomcowsay.sh'>randomcowsay.sh</a>.</p>
 </section>
 <section id="links" class="level1">
-<h1><span class="header-section-number">7</span> Links</h1>
+<h1><span class="header-section-number">8</span> Links</h1>
 <ul>
 <li><a href="https://www.tilde.club/~brennen/tilde.club.listusers.html">list users</a></li>
 <li><a href="https://tilde.club/~pfhawkins/othertildes.html">other tildes</a></li>
 <li><a href="https://www.tilde.club/~cortex/games.html">tilde games</a></li>
+</ul>
+<p>Tilde pages I like:</p>
+<ul>
+<li><a href="tilde.club/~dphiffer/#8">~dphiffer</a></li>
 </ul>
 <p>Tilde users I know in “real life”:</p>
 <ul>
@@ -247,7 +307,7 @@ ejw      pts/94    13:26    4.00s  0.46s  0.00s tmux</code></pre>
 </map>
 </center>
 <!-- End Webring Fragment-->
-<p>Latest build <span class="citation" data-cites="1582674457">@1582674457</span></p>
+<p>Latest build <span class="citation" data-cites="1582734492">@1582734492</span></p>
 </section>
 </body>
 </html>
